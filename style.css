@@ -1,0 +1,1800 @@
+/* CSS 變數定義 */
+:root {
+    --primary-blue: #2c5aa0;
+    --accent-orange: #ff6b35;
+    --danger-red: #e74c3c;
+    --success-green: #27ae60;
+    --dark-gray: #2c3e50;
+    --light-gray: #95a5a6;
+    --pure-white: #ffffff;
+    --background-light: #f8f9fa;
+    --border-radius: 8px;
+    --shadow-light: 0 2px 10px rgba(0, 0, 0, 0.1);
+    --shadow-medium: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* 基礎重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--dark-gray);
+    background-color: var(--pure-white);
+}
+
+/* 容器 */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 導航欄 */
+.navbar {
+    background: var(--pure-white);
+    box-shadow: var(--shadow-light);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 1rem 0;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+    text-decoration: none;
+}
+
+.logo-icon {
+    font-size: 1.5rem;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: var(--dark-gray);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--primary-blue);
+}
+
+/* 首頁區塊 */
+.hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: var(--pure-white);
+    padding: 120px 0 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-badge {
+    display: inline-block;
+    background: var(--accent-orange);
+    color: var(--pure-white);
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+    line-height: 1.6;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background: var(--accent-orange);
+    color: var(--pure-white);
+}
+
+.btn-primary:hover {
+    background: #e55a2b;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--pure-white);
+    border: 2px solid var(--pure-white);
+}
+
+.btn-secondary:hover {
+    background: var(--pure-white);
+    color: var(--primary-blue);
+}
+
+.hero-visual {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.1;
+    z-index: 1;
+}
+
+.hero-visual img {
+    max-width: 400px;
+    height: auto;
+}
+
+/* 三大真相區塊 */
+.truths {
+    padding: 80px 0;
+    background: var(--background-light);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--light-gray);
+    margin-bottom: 4rem;
+}
+
+.truths-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.truth-card {
+    background: var(--pure-white);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: var(--shadow-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 4px solid var(--accent-orange);
+}
+
+.truth-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+}
+
+.truth-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-blue), #4a90e2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.truth-icon .number {
+    color: var(--pure-white);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.truth-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+}
+
+.truth-content {
+    color: var(--dark-gray);
+    line-height: 1.6;
+}
+
+.truth-conclusion {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: #e3f2fd;
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--primary-blue);
+}
+
+/* 濃度對比 */
+.concentration-comparison {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.comparison-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: var(--background-light);
+    border-radius: var(--border-radius);
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.comparison-item:last-child {
+    border-bottom: none;
+}
+
+.label {
+    font-weight: 500;
+    color: var(--dark-gray);
+}
+
+.value {
+    font-weight: 600;
+    color: var(--primary-blue);
+}
+
+.value.danger {
+    color: var(--danger-red);
+}/* 物理吸附原理樣式 */
+.principle-explanation {
+    margin: 2rem 0;
+}
+
+.principle-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.principle-intro {
+    font-size: 1.1rem;
+    color: var(--dark-gray);
+    line-height: 1.6;
+}
+
+.concentration-principle h4 {
+    color: var(--primary-blue);
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.principle-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.principle-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem;
+    background: var(--background-light);
+    border-radius: 12px;
+    border: 2px solid #e9ecef;
+    transition: transform 0.3s ease;
+}
+
+.principle-item:hover {
+    transform: translateY(-3px);
+    border-color: var(--primary-blue);
+}
+
+.principle-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.principle-item h5 {
+    color: var(--primary-blue);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.principle-item p {
+    color: var(--dark-gray);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.concentration-reality {
+    margin-top: 2rem;
+}
+
+.reality-alert {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+    border-radius: 12px;
+    border-left: 4px solid var(--accent-orange);
+}
+
+.alert-icon {
+    font-size: 2rem;
+    color: var(--accent-orange);
+    flex-shrink: 0;
+}
+
+.alert-content {
+    flex: 1;
+}
+
+.alert-content strong {
+    display: block;
+    color: var(--primary-blue);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.alert-content p {
+    color: var(--dark-gray);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* 濕度統計樣式 */
+.humidity-stats {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+    border-radius: 12px;
+    border: 2px solid var(--primary-blue);
+}
+
+.stats-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.stats-header h4 {
+    color: var(--primary-blue);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem;
+    background: var(--pure-white);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.stat-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.stat-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--dark-gray);
+    font-weight: 500;
+}
+
+.stat-value {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--accent-orange);
+}
+
+.performance-impact {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #f8d7da, #f5c6cb);
+    border-radius: 12px;
+    border: 2px solid var(--danger-red);
+}
+
+.impact-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.impact-header h4 {
+    color: var(--danger-red);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.impact-data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.impact-number {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.impact-number .number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--danger-red);
+}
+
+.impact-number .label {
+    font-size: 1rem;
+    color: var(--dark-gray);
+    font-weight: 500;
+}
+
+.impact-source {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.impact-source .source-label {
+    font-size: 0.9rem;
+    color: var(--dark-gray);
+}
+
+.impact-source .source-name {
+    font-weight: 600;
+    color: var(--primary-blue);
+    font-size: 0.95rem;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    .principle-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+    }
+    
+    .stat-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+    
+    .reality-alert {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .impact-data {
+        gap: 0.75rem;
+    }
+    
+    .impact-number .number {
+        font-size: 2rem;
+    }
+}
+
+/* 濕度影響示意圖 */.humidity-intro {
+    margin-bottom: 2rem;
+}
+
+.intro-text {
+    font-size: 1.1rem;
+    color: var(--dark-gray);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.question-highlight {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+    border-radius: 12px;
+    border-left: 4px solid var(--accent-orange);
+    margin: 1rem 0;
+}
+
+.question-mark {
+    font-size: 2rem;
+    color: var(--accent-orange);
+}
+
+.question-text {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary-blue);
+    flex: 1;
+}
+
+.humidity-diagram-container {
+    margin: 2rem 0;
+    text-align: center;
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 2px solid #e9ecef;
+}
+
+.diagram-header {
+    margin-bottom: 1rem;
+}
+
+.diagram-header h4 {
+    color: var(--primary-blue);
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.humidity-diagram {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.diagram-explanation {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.explanation-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.condition-label {
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.condition-label.dry {
+    background: #d4edda;
+    color: #155724;
+}
+
+.condition-label.humid {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.condition-result {
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.condition-result.success {
+    color: #28a745;
+}
+
+.condition-result.fail {
+    color: #dc3545;
+}
+
+.humidity-data-section {
+    margin: 2.5rem 0;
+    padding: 2rem;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border-radius: 12px;
+    border: 2px solid #dee2e6;
+}
+
+.data-title {
+    color: var(--primary-blue);
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.humidity-comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.comparison-card {
+    background: var(--pure-white);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.comparison-card.taiwan {
+    border-top: 4px solid #28a745;
+}
+
+.comparison-card.performance {
+    border-top: 4px solid #dc3545;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.location-icon,
+.performance-icon {
+    font-size: 1.5rem;
+}
+
+.location-name,
+.performance-name {
+    font-weight: 600;
+    color: var(--primary-blue);
+    font-size: 1.1rem;
+}
+
+.humidity-value,
+.performance-value {
+    margin-bottom: 1.5rem;
+}
+
+.value-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+    margin-bottom: 0.5rem;
+}
+
+.value-number.danger {
+    color: var(--danger-red);
+}
+
+.value-unit {
+    font-size: 1rem;
+    color: var(--dark-gray);
+    font-weight: 500;
+}
+
+.season-breakdown {
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+}
+
+.season-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.season {
+    font-weight: 600;
+    color: var(--primary-blue);
+    font-size: 0.9rem;
+}
+
+.humidity {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--accent-orange);
+}
+
+.research-source {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.source-label {
+    font-size: 0.9rem;
+    color: var(--dark-gray);
+}
+
+.source-name {
+    font-weight: 600;
+    color: var(--primary-blue);
+    font-size: 0.95rem;
+}
+
+.mechanism-explanation {
+    margin: 2.5rem 0;
+    padding: 2rem;
+    background: var(--pure-white);
+    border-radius: 12px;
+    border: 2px solid var(--primary-blue);
+}
+
+.mechanism-title {
+    color: var(--primary-blue);
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.mechanism-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.step-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 12px;
+    border-left: 4px solid var(--accent-orange);
+}
+
+.step-number {
+    background: var(--primary-blue);
+    color: var(--pure-white);
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.step-content {
+    flex: 1;
+}
+
+.step-content strong {
+    display: block;
+    color: var(--primary-blue);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.step-content p {
+    color: var(--dark-gray);
+    line-height: 1.5;
+    margin: 0;
+}
+
+.humidity-conclusion {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+    border-radius: 12px;
+    border: 2px solid var(--primary-blue);
+    margin-top: 2rem;
+}
+
+.conclusion-icon {
+    font-size: 3rem;
+    color: var(--accent-orange);
+    flex-shrink: 0;
+}
+
+.conclusion-content {
+    flex: 1;
+}
+
+.conclusion-content h4 {
+    color: var(--primary-blue);
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.conclusion-content p {
+    color: var(--dark-gray);
+    line-height: 1.6;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+/* 濕度統計 */
+.humidity-impact {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.humidity-stat {
+    flex-direction: column;
+    text-align: center;
+    border: none;
+    padding: 16px;
+    background: var(--pure-white);
+    border-radius: var(--border-radius);
+    flex: 1;
+}
+
+.stat-number {
+    font-size: 24px;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.stat-label {
+    font-weight: 500;
+    color: var(--dark-gray);
+}
+
+/* 國際標準 */
+.standards-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.standard-item {
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.standard-item:last-child {
+    border-bottom: none;
+}
+
+.standard-org {
+    font-weight: 600;
+    color: var(--primary-blue);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+/* 廠商動機 */
+.motivation {
+    padding: 80px 0;
+    background: var(--pure-white);
+}
+
+.motivation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.motivation-item {
+    text-align: center;
+    padding: 2rem;
+    background: var(--background-light);
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.motivation-item:hover {
+    transform: translateY(-5px);
+}
+
+.motivation-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.motivation-item h3 {
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+}
+
+.reality-check {
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, #ff6b35, #f7931e);
+    color: var(--pure-white);
+    border-radius: 12px;
+}
+
+.reality-check h3 {
+    margin-bottom: 1rem;
+}
+
+.reality-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.reality-text {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+/* 科學證據 */
+.evidence {
+    padding: 80px 0;
+    background: var(--background-light);
+}
+
+.evidence-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 3rem;
+}
+
+.evidence-section {
+    background: var(--pure-white);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow-light);
+}
+
+.evidence-section h3 {
+    color: var(--primary-blue);
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+}
+
+.models-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.model-card {
+    padding: 1.5rem;
+    background: var(--background-light);
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--accent-orange);
+}
+
+.model-card h4 {
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+}
+
+.equation {
+    margin: 1rem 0;
+}
+
+.formula {
+    background: var(--pure-white);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    font-family: 'Courier New', monospace;
+    font-size: 1.1rem;
+    text-align: center;
+    border: 2px solid var(--primary-blue);
+    color: var(--primary-blue);
+    font-weight: 600;
+}
+
+.threshold-explanation {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.data-point {
+    text-align: center;
+    padding: 1.5rem;
+    background: var(--background-light);
+    border-radius: var(--border-radius);
+}
+
+.data-value {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+    margin-bottom: 0.5rem;
+}
+
+.data-label {
+    font-size: 0.9rem;
+    color: var(--dark-gray);
+}
+
+/* --- 分子動能閾值區塊 (CSS Grid 最終樣式) --- */
+
+/* Grid 容器 */
+.threshold-grid-container {
+    display: grid;
+    /* 創建一個大約 1:1.5 比例的兩欄網格 */
+    grid-template-columns: 1fr 1.5fr; 
+    gap: 2rem; /* 欄和行之間的統一間距 */
+}
+
+/* 結論區塊的樣式 */
+.conclusion-item {
+    /* 關鍵：讓結論區塊從第二行開始，並向下合併三行 */
+    grid-row: 2 / span 3;
+    /* 讓它位於第二欄 */
+    grid-column: 2;
+}
+
+/* 數據點的通用樣式 */
+.grid-item[class*="data-point-"] {
+    text-align: center;
+    padding: 1.5rem;
+    background: var(--background-light, #f8f9fa);
+    border-radius: var(--border-radius, 8px);
+}
+
+/* 數據點內的文字樣式 */
+.data-value {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-blue, #2c5aa0);
+    margin-bottom: 0.5rem;
+}
+
+.data-label {
+    font-size: 0.9rem;
+    color: var(--dark-gray, #2c3e50);
+    line-height: 1.5;
+}
+
+/* 結論方塊的樣式 */
+.conclusion-box {
+    background: #e3f2fd;
+    border-left: 4px solid var(--primary-blue, #2c5aa0);
+    padding: 2rem;
+    border-radius: var(--border-radius, 8px);
+    height: 100%; /* 讓其高度填滿整個網格單元 */
+}
+
+.conclusion-title {
+    display: block;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary-blue, #2c5aa0);
+    margin-bottom: 1rem;
+}
+
+.conclusion-text {
+    font-size: 1rem;
+    color: var(--dark-gray, #2c3e50);
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* 響應式設計：在小螢幕上，所有項目都變成單欄佈局 */
+@media (max-width: 768px) {
+    .threshold-grid-container {
+        grid-template-columns: 1fr; /* 所有項目都佔據一整行 */
+    }
+    .conclusion-item {
+        /* 在手機上，重置其網格位置，讓它自然地排在第四位 */
+        grid-row: auto;
+        grid-column: auto;
+    }
+}
+
+/* 參考文獻區塊 */
+.references {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 80px 0;
+    border-top: 3px solid var(--primary-blue);
+}
+
+.references-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.references-intro {
+    font-size: 1.1rem;
+    color: var(--dark-gray);
+    text-align: center;
+    margin-bottom: 3rem;
+    line-height: 1.6;
+}
+
+.references-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.reference-category {
+    background: var(--pure-white);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid var(--accent-orange);
+}
+
+.reference-category h3 {
+    color: var(--primary-blue);
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.reference-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.reference-item {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 3px solid var(--primary-blue);
+}
+
+.ref-number {
+    background: var(--primary-blue);
+    color: var(--pure-white);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    min-width: 2rem;
+    text-align: center;
+    height: fit-content;
+}
+
+.ref-content {
+    flex: 1;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--dark-gray);
+}
+
+.ref-content strong {
+    color: var(--primary-blue);
+}
+
+.ref-content em {
+    color: var(--accent-orange);
+    font-style: italic;
+}
+
+.references-note {
+    background: var(--pure-white);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 2px solid var(--primary-blue);
+    text-align: center;
+}
+
+.references-note h4 {
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.reference-link {
+    color: var(--accent-orange);
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.reference-link:hover {
+    border-bottom-color: var(--accent-orange);
+}
+
+.academic-credentials {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.credential-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, var(--primary-blue), #4a90e2);
+    color: var(--pure-white);
+    border-radius: 25px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.credential-icon {
+    font-size: 1.1rem;
+}
+
+/* 結論區塊 */
+.conclusion {
+    padding: 80px 0;
+    background: var(--pure-white);
+}
+
+.conclusion-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.conclusion-highlight {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: var(--pure-white);
+    padding: 3rem;
+    border-radius: 12px;
+    margin-bottom: 3rem;
+}
+
+.solutions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.solution-item {
+    padding: 2rem;
+    background: var(--background-light);
+    border-radius: 12px;
+    text-align: center;
+}
+
+.solution-item h4 {
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+}
+
+.share-section {
+    background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+    padding: 3rem;
+    border-radius: 12px;
+    margin-top: 3rem;
+}
+
+.share-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.share-btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.3s ease;
+}
+
+.share-btn:hover {
+    transform: translateY(-2px);
+}
+
+.share-btn.facebook {
+    background: #1877f2;
+    color: var(--pure-white);
+}
+
+.share-btn.line {
+    background: #00c300;
+    color: var(--pure-white);
+}
+
+.share-btn.copy {
+    background: var(--dark-gray);
+    color: var(--pure-white);
+}
+
+/* 頁尾 */
+.footer {
+    background: var(--dark-gray);
+    color: var(--pure-white);
+    padding: 3rem 0 2rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+    margin-bottom: 1rem;
+    color: var(--accent-orange);
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+    color: var(--pure-white);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--accent-orange);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid #495057;
+    color: #adb5bd;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .truths-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .nav-menu {
+        display: none;
+    }
+    
+    .question-highlight {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+    
+    .diagram-explanation {
+        grid-template-columns: 1fr;
+    }
+    
+    .humidity-comparison-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .season-breakdown {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .humidity-conclusion {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .conclusion-icon {
+        align-self: center;
+    }
+    
+    .references-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .reference-category {
+        padding: 1.5rem;
+    }
+    
+    .reference-item {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .ref-number {
+        align-self: flex-start;
+        width: fit-content;
+    }
+    
+    .academic-credentials {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .credential-item {
+        width: fit-content;
+    }
+}
+
+/* 動畫效果 */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* 平滑滾動 */
+html {
+    scroll-behavior: smooth;
+}
+
+/* 選取文字顏色 */
+::selection {
+    background: var(--accent-orange);
+    color: var(--pure-white);
+}
+
+/* 焦點樣式 */
+.btn:focus,
+.nav-link:focus {
+    outline: 2px solid var(--accent-orange);
+    outline-offset: 2px;
+}
+
+/* --- 安全、無污染的收合元件樣式 --- */
+.safe-accordion-wrapper {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.safe-accordion {
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    overflow: hidden;
+}
+.safe-accordion__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    background-color: #f8f9fa;
+    transition: background-color 0.2s;
+}
+.safe-accordion__header:hover {
+    background-color: #e9ecef;
+}
+.safe-accordion__header h4 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: var(--primary-blue);
+    font-weight: 600;
+}
+.safe-accordion__icon {
+    width: 10px;
+    height: 10px;
+    border-left: 2px solid var(--primary-blue);
+    border-bottom: 2px solid var(--primary-blue);
+    transform: rotate(-45deg);
+    transition: transform 0.3s;
+    margin-left: 1rem;
+    flex-shrink: 0;
+}
+.safe-accordion__content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+    background-color: #ffffff;
+}
+.safe-accordion__inner {
+    padding: 1.5rem;
+}
+.safe-accordion.is-active .safe-accordion__content {
+    max-height: 1000px; /* 展開高度 */
+}
+.safe-accordion.is-active .safe-accordion__icon {
+    transform: rotate(135deg); /* 圖示旋轉 */
+}
+
+/* --- 方案二：警示主題風 導航列樣式 --- */
+.navbar-v2 {
+    background: #ffffff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    /* 頂部的警示線 */
+    border-top: 4px solid var(--accent-orange, #ff6b35);
+}
+
+.nav-container-v2 {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.nav-logo-v2 {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 0.5rem;
+}
+
+.nav-logo-icon-v2 {
+    font-size: 1.8rem; /* 加大圖標 */
+}
+
+.nav-logo-text-v2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #333;
+}
+
+.nav-menu-v2 {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+}
+
+.nav-link-v2 {
+    color: #555;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.nav-link-v2:hover {
+    background-color: #f0f0f0;
+    color: #000;
+}
+
+/* 當前活動連結的樣式 */
+.nav-link-v2.active {
+    background-color: var(--primary-blue, #2c5aa0);
+    color: #ffffff;
+    box-shadow: 0 2px 5px rgba(44, 90, 160, 0.3);
+}
+
+/* --- 濕度影響區塊 (安全覆蓋版樣式) --- */
+
+/* 主卡片容器 */
+.humidity-v2-card {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2rem;
+    background: var(--pure-white, #ffffff);
+    border-radius: 16px;
+    padding: 2.5rem;
+    margin-top: 1.5rem;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e9ecef;
+    overflow: hidden;
+}
+
+/* 左側圖表容器 */
+.humidity-v2-chart-container {
+    flex: 1;
+    min-width: 250px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    gap: 2rem;
+    height: 250px;
+    padding: 1rem;
+    border-right: 1px solid #e9ecef;
+}
+
+/* 單個柱狀圖的包裹層 */
+.humidity-v2-bar-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    width: 80px;
+}
+
+/* 柱狀圖本身 */
+.humidity-v2-bar {
+    width: 100%;
+    background: linear-gradient(to top, #27ae60, #6fcf97);
+    border-radius: 8px 8px 0 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* 讓文字垂直居中 */
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+    height: 0; /* 初始高度為 0 */
+    transition: height 1s ease-out;
+}
+
+/* 當卡片進入視窗時，柱狀圖執行動畫 */
+.humidity-v2-card.is-in-view .humidity-v2-bar {
+    height: var(--final-height);
+}
+
+.humidity-v2-bar.is-danger {
+    background: linear-gradient(to top, #e74c3c, #f1948a);
+}
+
+.humidity-v2-bar-value {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.5s 0.8s, transform 0.5s 0.8s;
+}
+
+.humidity-v2-card.is-in-view .humidity-v2-bar-value {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.humidity-v2-bar-label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #555;
+}
+
+/* 右側文字容器 */
+.humidity-v2-text-container {
+    flex: 2;
+    min-width: 300px;
+}
+
+.humidity-v2-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary-blue, #2c5aa0);
+    margin: 0 0 1rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.humidity-v2-quote {
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 1.7;
+    color: var(--dark-gray, #2c3e50);
+    border-left: 3px solid var(--accent-orange, #ff6b35);
+    padding-left: 1.5rem;
+    margin: 0 0 1.5rem 0;
+    font-style: italic;
+}
+
+.humidity-v2-conclusion {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+    margin: 0;
+}
+
+/* 響應式調整 */
+@media (max-width: 992px) {
+    .humidity-v2-card {
+        flex-direction: column;
+    }
+    .humidity-v2-chart-container {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #e9ecef;
+        padding-bottom: 2rem;
+    }
+}
