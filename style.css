@@ -88,13 +88,12 @@ body {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: var(--pure-white);
     padding: 120px 0 80px;
-    text-align: center;
     position: relative;
     overflow: hidden;
+    min-height: 80vh;
 }
 
-.hero::before {
-    content: '';
+.hero-background {
     position: absolute;
     top: 0;
     left: 0;
@@ -104,11 +103,19 @@ body {
     z-index: 1;
 }
 
-.hero-content {
+.hero .container {
     position: relative;
     z-index: 2;
-    max-width: 800px;
-    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+.hero-content {
+    flex: 1;
+    text-align: left;
+    max-width: 600px;
 }
 
 .hero-badge {
@@ -122,6 +129,24 @@ body {
     margin-bottom: 2rem;
 }
 
+.warning-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 107, 53, 0.9);
+    color: var(--pure-white);
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+}
+
+.warning-icon {
+    font-size: 1.2rem;
+}
+
 .hero-title {
     font-size: 3rem;
     font-weight: 700;
@@ -129,10 +154,19 @@ body {
     line-height: 1.2;
 }
 
+.highlight {
+    color: var(--accent-orange);
+    background: linear-gradient(45deg, var(--accent-orange), #ff8c5a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
 .hero-subtitle {
     font-size: 1.5rem;
     margin-bottom: 2rem;
     opacity: 0.9;
+    font-weight: 500;
 }
 
 .hero-description {
@@ -141,11 +175,28 @@ body {
     line-height: 1.6;
 }
 
-.hero-buttons {
+.hero-actions {
     display: flex;
     gap: 1rem;
-    justify-content: center;
     flex-wrap: wrap;
+}
+
+.hero-visual {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 500px;
+}
+
+.hero-image {
+    max-width: 100%;
+    height: auto;
+    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 20px;
 }
 
 .btn {
@@ -182,18 +233,30 @@ body {
     color: var(--primary-blue);
 }
 
-.hero-visual {
-    position: absolute;
-    right: 5%;
-    top: 50%;
-    transform: translateY(-50%);
-    opacity: 0.1;
-    z-index: 1;
-}
-
-.hero-visual img {
-    max-width: 400px;
-    height: auto;
+/* 響應式設計 - Hero 區塊 */
+@media (max-width: 768px) {
+    .hero .container {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+    
+    .hero-content {
+        text-align: center;
+        max-width: 100%;
+    }
+    
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    
+    .hero-actions {
+        justify-content: center;
+    }
+    
+    .hero-visual {
+        max-width: 300px;
+    }
 }
 
 /* 三大真相區塊 */
