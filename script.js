@@ -80,7 +80,7 @@ function animateNumber(element, start, end, duration) {
 }
 
 // 當數據元素進入視窗時觸發計數動畫
-const numberElements = document.querySelectorAll('.stat-number, .data-value');
+const numberElements = document.querySelectorAll('.stat-number:not(.no-animate), .data-value:not(.no-animate)');
 const numberObserver = new IntersectionObserver(function(entries) {
     entries.forEach(entry => {
         if (entry.isIntersecting && !entry.target.classList.contains('animated')) {

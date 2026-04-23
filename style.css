@@ -359,6 +359,19 @@ body {
     border-bottom: none;
 }
 
+.comparison-item--stack {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem;
+}
+
+.value-sub {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: inherit;
+    opacity: 0.8;
+}
+
 .label {
     font-weight: 500;
     color: var(--dark-gray);
@@ -371,7 +384,36 @@ body {
 
 .value.danger {
     color: var(--danger-red);
-}/* 物理吸附原理樣式 */
+}
+
+/* 第一點 <10% 醒目區塊 */
+.highlight-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #fff8e1;
+    border: 2px solid #f59e0b;
+    border-radius: var(--border-radius);
+    padding: 1.2rem 1.5rem;
+    margin: 1.5rem 0;
+    text-align: center;
+}
+
+.highlight-stat .stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #d97706;
+    line-height: 1.1;
+}
+
+.highlight-stat .stat-desc {
+    font-size: 0.95rem;
+    color: var(--dark-gray);
+    margin-top: 0.4rem;
+}
+
+/* 物理吸附原理樣式 */
 .principle-explanation {
     margin: 2rem 0;
 }
@@ -560,6 +602,38 @@ body {
     gap: 1rem;
 }
 
+.impact-summary {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--dark-gray);
+    text-align: left;
+}
+
+.impact-summary strong {
+    color: var(--danger-red);
+}
+
+.impact-highlight {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.impact-highlight .number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--danger-red);
+}
+
+.impact-highlight .label {
+    font-size: 1rem;
+    color: var(--dark-gray);
+    font-weight: 500;
+    text-align: center;
+}
+
 .impact-number {
     display: flex;
     flex-direction: column;
@@ -577,24 +651,28 @@ body {
     font-size: 1rem;
     color: var(--dark-gray);
     font-weight: 500;
+    text-align: center;
 }
 
 .impact-source {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 0.25rem;
 }
 
 .impact-source .source-label {
     font-size: 0.9rem;
     color: var(--dark-gray);
+    white-space: nowrap;
 }
 
 .impact-source .source-name {
     font-weight: 600;
     color: var(--primary-blue);
     font-size: 0.95rem;
+    text-align: center;
 }
 
 /* 響應式設計 */
@@ -957,6 +1035,26 @@ body {
     margin: 0;
 }
 
+.finding-text {
+    max-width: 36ch;
+}
+
+.finding-text p {
+    margin: 0;
+    color: var(--dark-gray);
+    line-height: 1.75;
+    font-size: 1.03rem;
+    text-align: left;
+}
+
+.finding-text p + p {
+    margin-top: 0.75rem;
+}
+
+.finding-text strong {
+    color: var(--primary-blue);
+}
+
 /* 濕度統計 */
 .humidity-impact {
     display: flex;
@@ -1008,6 +1106,68 @@ body {
     color: var(--primary-blue);
     display: block;
     margin-bottom: 0.5rem;
+}
+
+/* 第三點硬條件與市售現實 */
+.requirements-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    margin: 1.2rem 0 1.4rem;
+}
+
+.requirement-item {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    background: linear-gradient(135deg, #d9ebfb, #c4e0f7);
+    border-left: 4px solid var(--primary-blue);
+    border-radius: 10px;
+    padding: 0.9rem 1rem;
+}
+
+.req-icon {
+    font-size: 1.4rem;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.req-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.req-text strong {
+    color: var(--primary-blue);
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.req-text span {
+    color: var(--dark-gray);
+    font-size: 0.98rem;
+}
+
+.market-reality-box {
+    margin-top: 1.2rem;
+    padding: 1.1rem 1rem;
+    background: #f8d7da;
+    border: 2px solid var(--danger-red);
+    border-radius: 10px;
+}
+
+.market-reality-box h4 {
+    margin: 0 0 0.6rem;
+    color: var(--danger-red);
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+.market-reality-box p {
+    margin: 0;
+    line-height: 1.75;
+    color: var(--dark-gray);
 }
 
 /* 廠商動機 */
@@ -1064,9 +1224,15 @@ body {
 }
 
 .reality-text {
-    font-size: 1.5rem;
+    font-size: clamp(1.22rem, 1.6vw, 1.42rem);
     font-weight: 600;
-    line-height: 1.4;
+    line-height: 1.6;
+    max-width: 58ch;
+    margin: 0 auto;
+}
+
+.text-danger {
+    color: var(--danger-red);
 }
 
 /* 科學證據 */
@@ -1542,6 +1708,15 @@ body {
         text-align: center;
         gap: 1rem;
     }
+
+    .finding-text {
+        max-width: 100%;
+    }
+
+    .finding-text p {
+        font-size: 1rem;
+        text-align: left;
+    }
     
     .conclusion-icon {
         align-self: center;
@@ -1734,6 +1909,76 @@ html {
     box-shadow: 0 2px 5px rgba(44, 90, 160, 0.3);
 }
 
+/* --- 附錄濕度影響新版版型 --- */
+.humidity-evidence-intro {
+    margin: 0.8rem 0 1.05rem;
+    max-width: 85ch;
+    line-height: 1.75;
+    color: var(--dark-gray);
+    font-size: 1.08rem;
+    text-wrap: pretty;
+}
+
+.inline-emphasis {
+    color: #e24b3c;
+    font-weight: 700;
+}
+
+.humidity-impact-panel {
+    background: #f3d8dc;
+    border: 2px solid var(--danger-red);
+    border-radius: 14px;
+    padding: 1.7rem 2rem;
+    text-align: center;
+}
+
+.humidity-impact-main {
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    font-weight: 800;
+    color: var(--danger-red);
+    line-height: 1;
+}
+
+.humidity-impact-sub {
+    margin: 0.75rem auto 0;
+    max-width: none;
+    font-size: clamp(1.45rem, 2.3vw, 1.95rem);
+    font-weight: 700;
+    color: #1f3f63;
+    line-height: 1.4;
+    white-space: nowrap;
+}
+
+.humidity-impact-divider {
+    height: 1px;
+    background: rgba(231, 76, 60, 0.28);
+    margin: 1rem 0 0.95rem;
+}
+
+.humidity-impact-note {
+    margin: 0 auto;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #27405f;
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .humidity-impact-panel {
+        padding: 1.35rem 1rem;
+    }
+
+    .humidity-impact-sub {
+        font-size: 1.22rem;
+        max-width: 100%;
+        white-space: normal;
+    }
+
+    .humidity-impact-note {
+        white-space: normal;
+    }
+}
+
 /* --- 濕度影響區塊 (安全覆蓋版樣式) --- */
 
 /* 主卡片容器 */
@@ -1859,5 +2104,158 @@ html {
         border-right: none;
         border-bottom: 1px solid #e9ecef;
         padding-bottom: 2rem;
+    }
+}
+
+/* --- 手機版統一優化 --- */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 14px;
+    }
+
+    .truths,
+    .motivation,
+    .evidence,
+    .references,
+    .conclusion {
+        padding: 56px 0;
+    }
+
+    .section-title {
+        font-size: clamp(1.7rem, 7vw, 2.1rem);
+        line-height: 1.25;
+        margin-bottom: 0.75rem;
+    }
+
+    .section-subtitle {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .navbar-v2 {
+        border-top-width: 3px;
+    }
+
+    .nav-container-v2 {
+        height: auto;
+        min-height: 70px;
+        padding: 10px 12px;
+        flex-wrap: wrap;
+        row-gap: 8px;
+    }
+
+    .nav-logo-v2 {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .nav-menu-v2 {
+        width: 100%;
+        justify-content: flex-start;
+        gap: 0.5rem;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 3px;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .nav-menu-v2 li {
+        flex: 0 0 auto;
+    }
+
+    .nav-link-v2 {
+        padding: 0.45rem 0.85rem;
+        font-size: 0.92rem;
+    }
+
+    .hero {
+        padding: 116px 0 52px;
+    }
+
+    .hero-title {
+        font-size: clamp(1.9rem, 8vw, 2.35rem);
+        line-height: 1.2;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.75rem;
+    }
+
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .truths-grid,
+    .motivation-grid,
+    .models-grid,
+    .references-grid,
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+
+    .truth-card,
+    .evidence-section,
+    .reference-category,
+    .motivation-item {
+        padding: 1.15rem;
+        border-radius: 10px;
+    }
+
+    .truth-title {
+        font-size: 1.5rem;
+        line-height: 1.35;
+    }
+
+    .comparison-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.35rem;
+    }
+
+    .highlight-stat .stat-number,
+    .impact-highlight .number,
+    .humidity-impact-main {
+        font-size: clamp(2rem, 9vw, 2.7rem);
+    }
+
+    .reality-title {
+        font-size: 1.5rem;
+    }
+
+    .reality-text {
+        max-width: 100%;
+    }
+
+    .formula {
+        font-size: 0.94rem;
+        padding: 0.85rem;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .humidity-evidence-intro {
+        font-size: 1rem;
+    }
+
+    .humidity-impact-sub {
+        font-size: 1.16rem;
+    }
+
+    .humidity-impact-note {
+        font-size: 0.95rem;
+        line-height: 1.65;
+    }
+
+    .safe-accordion__header h4 {
+        font-size: 1rem;
+        line-height: 1.4;
     }
 }
